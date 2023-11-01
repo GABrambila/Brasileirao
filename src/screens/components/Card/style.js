@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
         color:'#666'
     },
     score:{
-        fontSize: 36,
+        fontSize: 30,
         fontWeight: 'bold',
        
     },
@@ -46,4 +46,5 @@ export const styles = StyleSheet.create({
             fontSize: 18,
             fontWeight: 'bold'
     }
-}); 
+    
+  });

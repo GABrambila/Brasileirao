@@ -1,11 +1,22 @@
 import { Text, View } from "react-native";
 import { styles } from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
-function Card( props ){
+function Card(props){
+
+    
+   const navigation = useNavigation()
+   
+   function handleNavigationDetails(){
+
+    navigation.navigate('details', {id:200, home : props.teamHome, 
+                                    visited: props.teamVisited})
+
+   }
 
     return(
         <View style={styles.container}>
-            <View stylee={styles.container_primary}>
+            <View style={styles.container_primary}>
                 <Text style={styles.stadion}>{props.stadium}</Text>
                 <Text style={styles.date}>{props.date}</Text>
             </View>
@@ -16,9 +27,9 @@ function Card( props ){
                 <Text style={styles.score}>{props.scoreVisited}</Text>
                 <Text style={styles.time_visit}>{props.teamVisited}</Text>
             </View>
-            <Text style={styles.details}>SAIBA COMO FOI</Text>
+            <Text onPress={handleNavigationDetails} style={styles.details}>SAIBA COMO FOI</Text>
         </View>
     )
 }
 
-export default Card; 
+export default Card
